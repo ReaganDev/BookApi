@@ -1,0 +1,15 @@
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\BookApiModels.deps.json
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\BookApiModels.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\ref\BookApiModels.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\BookApiModels.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.AssemblyInfo.cs
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\ref\BookApiModels.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\BookApiModels.runtimeconfig.json
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\bin\Debug\net5.0\BookApiModels.runtimeconfig.dev.json
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiModels\obj\Debug\net5.0\BookApiModels.genruntimeconfig.cache

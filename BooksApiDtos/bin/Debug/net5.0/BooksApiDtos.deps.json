@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "BooksApiDtos/1.0.0": {
+        "runtime": {
+          "BooksApiDtos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BooksApiDtos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
