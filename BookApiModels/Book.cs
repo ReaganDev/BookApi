@@ -17,8 +17,10 @@ namespace BookApiModels
         public DateTime? DateRead { get; set; }
         public int? Rating { get; set; }
         public string CoverUrl { get; set; }
-        public DateTime DateAdded { get; set; } 
-
+        public DateTime DateAdded { get; set; }
+        // Navigation Properties
+        public Publisher Publisher { get; set; }
+        public string PublisherId { get; set; }
 
     }
 }
