@@ -21,6 +21,8 @@ namespace BookApiModels
         // Navigation Properties
         public Publisher Publisher { get; set; }
         public string PublisherId { get; set; }
+        public ICollection<Book_Author> BookAuthors { get; set; }
+
 
     }
 }

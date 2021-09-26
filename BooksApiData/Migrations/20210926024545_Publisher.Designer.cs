@@ -3,31 +3,20 @@ using System;
 using BooksApiData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BooksApiData.Migrations
 {
     [DbContext(typeof(BookContext))]
-    partial class BookContextModelSnapshot : ModelSnapshot
+    [Migration("20210926024545_Publisher")]
+    partial class Publisher
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.10");
-
-            modelBuilder.Entity("BookApiModels.Author", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Authors");
-                });
 
             modelBuilder.Entity("BookApiModels.Book", b =>
                 {
@@ -71,26 +60,6 @@ namespace BooksApiData.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("BookApiModels.Book_Author", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("AuthorId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("BookId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("BookAuthors");
-                });
-
             modelBuilder.Entity("BookApiModels.Publisher", b =>
                 {
                     b.Property<string>("Id")
@@ -101,7 +70,7 @@ namespace BooksApiData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Publishers");
+                    b.ToTable("Publisher");
                 });
 
             modelBuilder.Entity("BookApiModels.Book", b =>
@@ -111,31 +80,6 @@ namespace BooksApiData.Migrations
                         .HasForeignKey("PublisherId");
 
                     b.Navigation("Publisher");
-                });
-
-            modelBuilder.Entity("BookApiModels.Book_Author", b =>
-                {
-                    b.HasOne("BookApiModels.Author", "Author")
-                        .WithMany("BookAuthors")
-                        .HasForeignKey("AuthorId");
-
-                    b.HasOne("BookApiModels.Book", "Book")
-                        .WithMany("BookAuthors")
-                        .HasForeignKey("BookId");
-
-                    b.Navigation("Author");
-
-                    b.Navigation("Book");
-                });
-
-            modelBuilder.Entity("BookApiModels.Author", b =>
-                {
-                    b.Navigation("BookAuthors");
-                });
-
-            modelBuilder.Entity("BookApiModels.Book", b =>
-                {
-                    b.Navigation("BookAuthors");
                 });
 
             modelBuilder.Entity("BookApiModels.Publisher", b =>
