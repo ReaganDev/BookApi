@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BooksApiData.Interfaces
 {
-    public interface IAuthorsService
+    public interface IPublisherService
     {
-        void AddAuthor(AuthorDto model);
+        void AddPublisher(PublisherDto model);
     }
 }
