@@ -1,18 +1,13 @@
 using BooksApiData;
+using BooksApiData.Implementation;
+using BooksApiData.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BooksApi
 {
@@ -36,6 +31,8 @@ namespace BooksApi
           );
 
             services.AddScoped<IBookService, BookService > ();
+            services.AddScoped<IPublisherService, PublisherService>();
+            services.AddScoped<IAuthorsService, AuthorsService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BooksApi", Version = "v1" });
@@ -52,7 +49,6 @@ namespace BooksApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BooksApi v1"));
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -61,9 +57,10 @@ namespace BooksApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+               
             });
 
-            AppDbInitializer.Seed(app);
+          //  AppDbInitializer.Seed(app);
         }
     }
 }

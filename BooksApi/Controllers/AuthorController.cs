@@ -1,16 +1,9 @@
-﻿using BooksApiData.Implementation;
-using BooksApiData.Interfaces;
+﻿using BooksApiData.Interfaces;
 using BooksApiDtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BooksApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
@@ -27,6 +20,19 @@ namespace BooksApi.Controllers
         {
             _authorService.AddAuthor(author);
             return Ok("Author Added");
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/{authorId}")]
+
+        public IActionResult GetAuthorAndBook(int authorId)
+        {
+            var books = _authorService.GetAuthorAndBooks(authorId);
+            if (books != null)
+            {
+                return Ok(books);
+            }
+            return NotFound("Id does not belong to an author");
         }
     }
 }

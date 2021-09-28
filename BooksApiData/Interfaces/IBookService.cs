@@ -8,8 +8,8 @@ namespace BooksApiData
     {
         void AddBook(BookDto book);
         List<Book> GetAllBooks();
-        Book GetBookById(string id);
-        Book UpdateBook(string id, BookDto book);
-        void DeleteBookById(string id);
+        BookDtoWithAuthors GetBookById(int id);
+        Book UpdateBook(int id, BookDto book);
+        void DeleteBookById(int id);
     }
 }

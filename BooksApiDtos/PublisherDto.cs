@@ -10,4 +10,16 @@ namespace BooksApiDtos
     {
         public string Name { get; set; }
     }
+
+    public class PublisherAndBook
+    {       
+        public string PublisherName { get; set; }
+        public ICollection<BookAuthor> BookAuthors { get; set; }
+    }
+
+    public class BookAuthor
+    {
+        public string BookName { get; set; }
+        public ICollection<string> BookAuthors { get; set; }
+    }
 }

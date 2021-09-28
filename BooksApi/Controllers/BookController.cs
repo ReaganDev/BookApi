@@ -4,12 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BooksApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
 
     public class BookController : ControllerBase
     {
-        private  IBookService _bookService;
+        private IBookService _bookService;
 
         public BookController(IBookService bookService)
         {
@@ -26,7 +25,7 @@ namespace BooksApi.Controllers
 
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        public IActionResult GetBookById(string id)
+        public IActionResult GetBookById(int id)
         {
             var book = _bookService.GetBookById(id);
             if (book != null)
@@ -34,12 +33,11 @@ namespace BooksApi.Controllers
                 return Ok(book);
             }
             return BadRequest("Book Not Found");
-        }
-
+        }       
 
         [HttpPost]
         [Route("api/[controller]")]
-        public IActionResult AddBook([FromBody]BookDto book)
+        public IActionResult AddBook([FromBody] BookDto book)
         {
             _bookService.AddBook(book);
             return Ok();
@@ -48,7 +46,7 @@ namespace BooksApi.Controllers
         [HttpPut]
         [Route("api/[controller]/{id}")]
 
-        public IActionResult UpdateBook(string id, [FromBody] BookDto book)
+        public IActionResult UpdateBook(int id, [FromBody] BookDto book)
         {
             var updatedBook = _bookService.UpdateBook(id, book);
             return Ok(updatedBook);
@@ -57,7 +55,7 @@ namespace BooksApi.Controllers
         [HttpDelete]
         [Route("api/[controller]/{id}")]
 
-        public IActionResult DeleteBookById(string id)
+        public IActionResult DeleteBookById(int id)
         {
             _bookService.DeleteBookById(id);
             return Ok();

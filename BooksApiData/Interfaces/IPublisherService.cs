@@ -1,14 +1,11 @@
 ﻿using BooksApiDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BooksApiData.Interfaces
 {
     public interface IPublisherService
     {
         void AddPublisher(PublisherDto model);
+        PublisherAndBook GetPublisherAndBook(int id);
+        void DeletePublisher(int id);
     }
 }

@@ -3,14 +3,16 @@ using System;
 using BooksApiData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BooksApiData.Migrations
 {
     [DbContext(typeof(BookContext))]
-    partial class BookContextModelSnapshot : ModelSnapshot
+    [Migration("20210927035558_Updated")]
+    partial class Updated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,9 +20,8 @@ namespace BooksApiData.Migrations
 
             modelBuilder.Entity("BookApiModels.Author", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
@@ -32,9 +33,8 @@ namespace BooksApiData.Migrations
 
             modelBuilder.Entity("BookApiModels.Book", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CoverUrl")
                         .HasColumnType("TEXT");
@@ -54,8 +54,8 @@ namespace BooksApiData.Migrations
                     b.Property<bool>("IsRead")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("PublisherId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PublisherId")
+                        .HasColumnType("TEXT");
 
                     b.Property<int?>("Rating")
                         .HasColumnType("INTEGER");
@@ -76,11 +76,11 @@ namespace BooksApiData.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AuthorId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("BookId")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -93,9 +93,8 @@ namespace BooksApiData.Migrations
 
             modelBuilder.Entity("BookApiModels.Publisher", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
@@ -109,9 +108,7 @@ namespace BooksApiData.Migrations
                 {
                     b.HasOne("BookApiModels.Publisher", "Publisher")
                         .WithMany("Books")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PublisherId");
 
                     b.Navigation("Publisher");
                 });
@@ -120,15 +117,11 @@ namespace BooksApiData.Migrations
                 {
                     b.HasOne("BookApiModels.Author", "Author")
                         .WithMany("BookAuthors")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("BookApiModels.Book", "Book")
                         .WithMany("BookAuthors")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BookId");
 
                     b.Navigation("Author");
 

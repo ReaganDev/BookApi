@@ -10,5 +10,6 @@ namespace BooksApiData.Interfaces
     public interface IAuthorsService
     {
         void AddAuthor(AuthorDto model);
+        AuthorWithBookDto GetAuthorAndBooks(int id);
     }
 }

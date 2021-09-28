@@ -10,4 +10,10 @@ namespace BooksApiDtos
     {
         public string Name { get; set; }
     }
+
+    public class AuthorWithBookDto
+    {
+        public string Name { get; set; }
+        public ICollection<string> BookTitles { get; set; }
+    }
 }

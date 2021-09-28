@@ -8,10 +8,10 @@ namespace BookApiModels
 {
     public class Book_Author
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public int Id { get; set; } 
         public Book Book { get; set; }
-        public string BookId { get; set; }
+        public int BookId { get; set; }
         public Author Author { get; set; }
-        public string AuthorId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

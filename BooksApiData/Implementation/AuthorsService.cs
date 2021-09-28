@@ -28,5 +28,16 @@ namespace BooksApiData.Implementation
             
             _authorContext.SaveChanges();
         }
+
+        public AuthorWithBookDto GetAuthorAndBooks(int id)
+        {
+            var _books = _authorContext.Authors.Where(x => x.Id == id).Select(x => new AuthorWithBookDto()
+            {
+                Name = x.Name,
+                BookTitles = x.BookAuthors.Select(n => n.Book.Title).ToList()
+            }).FirstOrDefault();
+
+            return _books;
+        }
     }
 }

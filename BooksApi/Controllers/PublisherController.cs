@@ -1,16 +1,9 @@
-﻿using BooksApiData.Implementation;
-using BooksApiData.Interfaces;
+﻿using BooksApiData.Interfaces;
 using BooksApiDtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BooksApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class PublisherController : ControllerBase
     {
@@ -28,5 +21,27 @@ namespace BooksApi.Controllers
             _publisherService.AddPublisher(model);
             return Ok("Publisher Added");
         }
+
+        [HttpGet]
+        [Route("api/[controller]")]
+        public IActionResult GetPublisherBooks(int id)
+        {
+            var _books = _publisherService.GetPublisherAndBook(id);
+            if (_books != null)
+            {
+                return Ok(_books);
+            }
+            return NotFound("No book found");           
+        }
+
+        [HttpDelete]
+        [Route("api/[controller]")]
+
+        public IActionResult DeletePublisher(int id)
+        {
+            _publisherService.DeletePublisher(id);
+            return Ok("Publisher Deleted");
+        }
+
     }
 }

@@ -19,7 +19,6 @@ namespace BooksApiData
         {
             var _book = new Book()
             {
-                Author = book.Author,
                 Title = book.Title,
                 Description = book.Description,
                 IsRead = book.IsRead,
@@ -27,10 +26,22 @@ namespace BooksApiData
                 Rating = book.IsRead ? book.Rating.Value : null,
                 Genre = book.Genre,
                 CoverUrl = book.CoverUrl,
-                DateAdded = DateTime.Now
+                DateAdded = DateTime.Now,
+                PublisherId = book.PublisherId
             };
             _bookContext.Books.Add(_book);
             _bookContext.SaveChanges();
+
+            foreach (var id in book.AuthorIds)
+            {
+                var _bookAuthor = new Book_Author()
+                {
+                    BookId = _book.Id,
+                    AuthorId = id
+                };
+                _bookContext.BookAuthors.Add(_bookAuthor);
+                _bookContext.SaveChanges();
+            }
         }
 
         public List<Book> GetAllBooks()
@@ -38,17 +49,29 @@ namespace BooksApiData
             return _bookContext.Books.ToList();           
         }
 
-        public Book GetBookById(string id)
+        public BookDtoWithAuthors GetBookById(int id)
         {
-            return _bookContext.Books.FirstOrDefault(x => x.Id == id);
+            var _book = _bookContext.Books.Where(x => x.Id == id).Select(book => new BookDtoWithAuthors()
+            {
+                Title = book.Title,
+                Description = book.Description, 
+                Genre = book.Genre,
+                IsRead = book.IsRead,
+                PublisherName = book.Publisher.Name,
+                DateRead = book.DateRead,
+                Rating = book.Rating,
+                CoverUrl = book.CoverUrl,
+                AuthorNames = book.BookAuthors.Select(x => x.Author.Name).ToList()
+            }).FirstOrDefault();
+
+            return _book;
         }
 
-        public Book UpdateBook(string id, BookDto book)
+        public Book UpdateBook(int id, BookDto book)
         {
-            var existingBook = GetBookById(id);
+            var existingBook = _bookContext.Books.FirstOrDefault(x => x.Id == id);
             if (existingBook != null)
             {
-                existingBook.Author = book.Author;
                 existingBook.Title = book.Title;
                 existingBook.Description = book.Description;
                 existingBook.IsRead = book.IsRead;
@@ -62,9 +85,9 @@ namespace BooksApiData
             return existingBook;
         }
 
-        public void DeleteBookById(string id)
+        public void DeleteBookById(int id)
         {
-            var book = GetBookById(id);
+            var book = _bookContext.Books.FirstOrDefault(x => x.Id == id);
             if (book != null)
             {
                 _bookContext.Books.Remove(book);

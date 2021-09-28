@@ -22,7 +22,6 @@ namespace BooksApiData
                     Title = "1st Book Title",
                     Description = "1st Book Description",
                     Genre = "1st Book Genre",
-                    Author = "Reagan Reuben",
                     IsRead = true,
                     DateRead = DateTime.Now.AddDays(-5),
                     Rating = 8,
@@ -34,7 +33,6 @@ namespace BooksApiData
                     Title = "2nd Book Title",
                     Description = "2nd Book Description",
                     Genre = "2nd Book Genre",
-                    Author = "Chinonso Reuben",
                     IsRead = false,
                     CoverUrl = "Https...",
                     DateAdded = DateTime.Now
