@@ -15,7 +15,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/add-author")]
         public IActionResult AddAuthor([FromBody] AuthorDto author)
         {
             _authorService.AddAuthor(author);
@@ -23,7 +23,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]/{authorId}")]
+        [Route("api/[controller]/get-author-books/{authorId}")]
 
         public IActionResult GetAuthorAndBook(int authorId)
         {

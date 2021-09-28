@@ -15,15 +15,29 @@ namespace BooksApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherDto model)
         {
-            _publisherService.AddPublisher(model);
-            return Ok("Publisher Added");
+            var newPublisher = _publisherService.AddPublisher(model);
+            return Created(nameof(AddPublisher), newPublisher);
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/get-publisher-by-id/{id}")]
+        public IActionResult GetPublisherById(int id)
+        {
+            var publisher = _publisherService.GetPublisherById(id);
+            if (publisher != null)
+            {
+                return Ok(publisher);
+            }
+
+            return NotFound("Publisher does not exist");
+        }
+
+
+        [HttpGet]
+        [Route("api/[controller]/get-publisher-books")]
         public IActionResult GetPublisherBooks(int id)
         {
             var _books = _publisherService.GetPublisherAndBook(id);
@@ -35,7 +49,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/delete-publisher")]
 
         public IActionResult DeletePublisher(int id)
         {

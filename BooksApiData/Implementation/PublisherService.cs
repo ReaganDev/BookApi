@@ -14,7 +14,7 @@ namespace BooksApiData.Implementation
             _publisherContext = publisherContext;
         }
 
-        public void AddPublisher(PublisherDto model)
+        public Publisher AddPublisher(PublisherDto model)
         {
             var _publisher = new Publisher()
             {
@@ -22,7 +22,11 @@ namespace BooksApiData.Implementation
             };
             _publisherContext.Add(_publisher);
             _publisherContext.SaveChanges();
+
+            return _publisher;
         }
+
+        public Publisher GetPublisherById(int id) => _publisherContext.Publishers.FirstOrDefault(x => x.Id == id);
 
         public PublisherAndBook GetPublisherAndBook(int id)
         {

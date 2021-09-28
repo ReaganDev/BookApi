@@ -16,7 +16,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/get-all-books")]
         public IActionResult GetAllBooks()
         {
             var allBooks = _bookService.GetAllBooks();
@@ -24,7 +24,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]/{id}")]
+        [Route("api/[controller]/get-books-by-id/{id}")]
         public IActionResult GetBookById(int id)
         {
             var book = _bookService.GetBookById(id);
@@ -36,7 +36,7 @@ namespace BooksApi.Controllers
         }       
 
         [HttpPost]
-        [Route("api/[controller]")]
+        [Route("api/[controller]/add-book")]
         public IActionResult AddBook([FromBody] BookDto book)
         {
             _bookService.AddBook(book);
@@ -44,7 +44,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpPut]
-        [Route("api/[controller]/{id}")]
+        [Route("api/[controller]/update-book/{id}")]
 
         public IActionResult UpdateBook(int id, [FromBody] BookDto book)
         {
@@ -53,7 +53,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]/{id}")]
+        [Route("api/[controller]/delete-books-by-id/{id}")]
 
         public IActionResult DeleteBookById(int id)
         {
