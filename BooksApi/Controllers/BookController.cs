@@ -53,7 +53,7 @@ namespace BooksApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]/delete-books-by-id/{id}")]
+        [Route("api/[controller]/{id}")]
 
         public IActionResult DeleteBookById(int id)
         {

@@ -1,6 +1,7 @@
 ﻿using BookApiModels;
 using BooksApiData.Interfaces;
 using BooksApiDtos;
+using System;
 using System.Linq;
 
 namespace BooksApiData.Implementation
@@ -50,6 +51,10 @@ namespace BooksApiData.Implementation
             {
                 _publisherContext.Publishers.Remove(_publisher);
                 _publisherContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"The publisher with id: {id} does not exist");
             }
         }
     }

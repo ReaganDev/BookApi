@@ -1,6 +1,7 @@
 ﻿using BooksApiData.Interfaces;
 using BooksApiDtos;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BooksApi.Controllers
 {
@@ -18,8 +19,17 @@ namespace BooksApi.Controllers
         [Route("api/[controller]/add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherDto model)
         {
+            try
+            {
             var newPublisher = _publisherService.AddPublisher(model);
             return Created(nameof(AddPublisher), newPublisher);
+
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet]
@@ -53,8 +63,15 @@ namespace BooksApi.Controllers
 
         public IActionResult DeletePublisher(int id)
         {
-            _publisherService.DeletePublisher(id);
-            return Ok("Publisher Deleted");
+            try
+            {             
+                _publisherService.DeletePublisher(id);
+                return Ok("Publisher Deleted");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
     }
