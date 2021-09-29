@@ -3,6 +3,7 @@ using BooksApiCore;
 using BooksApiData.Interfaces;
 using BooksApiDtos;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -31,6 +32,21 @@ namespace BooksApiData.Implementation
             _publisherContext.SaveChanges();
 
             return _publisher;
+        }
+
+        public ICollection<Publisher> GetAllPublishers(string sortBy)
+        {
+            var _allPublishers = _publisherContext.Publishers.OrderBy(n => n.Name).ToList();
+
+            if (!string.IsNullOrWhiteSpace(sortBy))
+            {
+                if (sortBy == "Desc")
+                {
+                    _allPublishers = _allPublishers.OrderByDescending(n => n.Name).ToList();
+                }
+            }
+
+            return _allPublishers;
         }
 
         public Publisher GetPublisherById(int id) => _publisherContext.Publishers.FirstOrDefault(x => x.Id == id);

@@ -17,6 +17,13 @@ namespace BooksApi.Controllers
             _publisherService = publisherService;
         }
 
+        [HttpGet]
+        [Route("api/controller/get-all-publishers")]
+        public IActionResult GetAllPublishers(string sortBy)
+        {
+            return Ok(_publisherService.GetAllPublishers(sortBy));
+        }
+
         [HttpPost]
         [Route("api/[controller]/add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherDto model)
