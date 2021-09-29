@@ -33,7 +33,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\hp\\Desktop\\PROJECTS PLAYGROUND\\BooksApi\\BooksApiDtos\\BooksApiDtos.csproj": {
+                "projectPath": "C:\\Users\\hp\\Desktop\\PROJECTS PLAYGROUND\\BooksApi\\BooksApiDtos\\BooksApiDtos.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -45,6 +49,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -265,6 +275,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

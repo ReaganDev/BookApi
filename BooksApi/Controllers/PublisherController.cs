@@ -1,4 +1,5 @@
-﻿using BooksApiCore;
+﻿using BookApiModels;
+using BooksApiCore;
 using BooksApiData.Interfaces;
 using BooksApiDtos;
 using Microsoft.AspNetCore.Mvc;
@@ -39,15 +40,16 @@ namespace BooksApi.Controllers
 
         [HttpGet]
         [Route("api/[controller]/get-publisher-by-id/{id}")]
-        public IActionResult GetPublisherById(int id)
+        public Publisher GetPublisherById(int id)
         {
-            var publisher = _publisherService.GetPublisherById(id);
-            if (publisher != null)
+            var _publisher = _publisherService.GetPublisherById(id);
+            if (_publisher != null)
             {
-                return Ok(publisher);
+               // return Ok(_publisher);
+                return _publisher;
             }
-
-            return NotFound("Publisher does not exist");
+           // return NotFound("Publisher Not found");
+            return null;
         }
 
 
