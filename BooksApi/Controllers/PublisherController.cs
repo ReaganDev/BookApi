@@ -40,16 +40,16 @@ namespace BooksApi.Controllers
 
         [HttpGet]
         [Route("api/[controller]/get-publisher-by-id/{id}")]
-        public Publisher GetPublisherById(int id)
+        public IActionResult GetPublisherById(int id)
         {
             var _publisher = _publisherService.GetPublisherById(id);
             if (_publisher != null)
             {
-               // return Ok(_publisher);
-                return _publisher;
+                return Ok(_publisher);
+               // return _publisher;
             }
-           // return NotFound("Publisher Not found");
-            return null;
+            return NotFound("Publisher Not found");
+            //return null;
         }
 
 

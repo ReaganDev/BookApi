@@ -9,3 +9,4 @@ C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApiDtos\obj\Debug\net5.0\B
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApiDtos\obj\Debug\net5.0\BooksApiDtos.dll
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApiDtos\obj\Debug\net5.0\ref\BooksApiDtos.dll
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApiDtos\obj\Debug\net5.0\BooksApiDtos.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApiDtos\obj\Debug\net5.0\BooksApiDtos.csproj.AssemblyReference.cache

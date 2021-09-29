@@ -63,3 +63,4 @@ C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\Books
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BooksApiDtos.pdb
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BookApiCore.dll
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BookApiCore.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\Newtonsoft.Json.dll
