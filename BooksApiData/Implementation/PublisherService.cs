@@ -34,7 +34,7 @@ namespace BooksApiData.Implementation
             return _publisher;
         }
 
-        public ICollection<Publisher> GetAllPublishers(string sortBy)
+        public ICollection<Publisher> GetAllPublishers(string sortBy, string search)
         {
             var _allPublishers = _publisherContext.Publishers.OrderBy(n => n.Name).ToList();
 
@@ -44,6 +44,11 @@ namespace BooksApiData.Implementation
                 {
                     _allPublishers = _allPublishers.OrderByDescending(n => n.Name).ToList();
                 }
+            }
+
+            if (!string.IsNullOrWhiteSpace(sortBy))
+            {
+                _allPublishers = _allPublishers.Where(x => x.Name.Contains(search, StringComparison.CurrentCultureIgnoreCase)).ToList();
             }
 
             return _allPublishers;

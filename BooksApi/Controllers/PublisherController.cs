@@ -19,9 +19,9 @@ namespace BooksApi.Controllers
 
         [HttpGet]
         [Route("api/controller/get-all-publishers")]
-        public IActionResult GetAllPublishers(string sortBy)
+        public IActionResult GetAllPublishers(string sortBy, string search)
         {
-            return Ok(_publisherService.GetAllPublishers(sortBy));
+            return Ok(_publisherService.GetAllPublishers(sortBy, search));
         }
 
         [HttpPost]

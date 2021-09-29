@@ -10,6 +10,6 @@ namespace BooksApiData.Interfaces
         PublisherAndBook GetPublisherAndBook(int id);
         void DeletePublisher(int id);
         Publisher GetPublisherById(int id);
-        ICollection<Publisher> GetAllPublishers(string sortBy);
+        ICollection<Publisher> GetAllPublishers(string sortBy, string search);
     }
 }
