@@ -1,4 +1,5 @@
-﻿using BooksApiData.Interfaces;
+﻿using BooksApiCore;
+using BooksApiData.Interfaces;
 using BooksApiDtos;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,10 @@ namespace BooksApi.Controllers
             var newPublisher = _publisherService.AddPublisher(model);
             return Created(nameof(AddPublisher), newPublisher);
 
+            }
+            catch (PublisherNameException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {

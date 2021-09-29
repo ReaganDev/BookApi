@@ -1,0 +1,11 @@
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\bin\Debug\net5.0\BookApiCore.deps.json
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\bin\Debug\net5.0\BookApiCore.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\bin\Debug\net5.0\ref\BookApiCore.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\bin\Debug\net5.0\BookApiCore.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.AssemblyInfo.cs
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\ref\BookApiCore.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BookApiCore\obj\Debug\net5.0\BookApiCore.pdb

@@ -1,8 +1,10 @@
 ﻿using BookApiModels;
+using BooksApiCore;
 using BooksApiData.Interfaces;
 using BooksApiDtos;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BooksApiData.Implementation
 {
@@ -17,6 +19,10 @@ namespace BooksApiData.Implementation
 
         public Publisher AddPublisher(PublisherDto model)
         {
+            if (StringStartsWithNumber(model.Name))
+            {
+                throw new PublisherNameException("Publisher Name starts with number", model.Name);
+            }
             var _publisher = new Publisher()
             {
                 Name = model.Name
@@ -56,6 +62,11 @@ namespace BooksApiData.Implementation
             {
                 throw new Exception($"The publisher with id: {id} does not exist");
             }
+        }
+
+        private bool StringStartsWithNumber(string name)
+        {
+           return Regex.IsMatch(name, @"^\d");
         }
     }
 }

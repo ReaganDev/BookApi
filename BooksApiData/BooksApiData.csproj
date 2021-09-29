@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookApiCore\BookApiCore.csproj" />
     <ProjectReference Include="..\BookApiModels\BookApiModels.csproj" />
     <ProjectReference Include="..\BooksApiDtos\BooksApiDtos.csproj" />
   </ItemGroup>

@@ -499,6 +499,16 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "BookApiCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BookApiCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookApiCore.dll": {}
+        }
+      },
       "BookApiModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -513,6 +523,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "BookApiCore": "1.0.0",
           "BookApiModels": "1.0.0",
           "BooksApiDtos": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -1360,6 +1371,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BookApiCore/1.0.0": {
+      "type": "project",
+      "path": "../BookApiCore/BookApiCore.csproj",
+      "msbuildProject": "../BookApiCore/BookApiCore.csproj"
     },
     "BookApiModels/1.0.0": {
       "type": "project",

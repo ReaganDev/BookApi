@@ -61,3 +61,5 @@ C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\Human
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BooksApiDtos.dll
 C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BooksApiDtos.pdb
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BookApiCore.dll
+C:\Users\hp\Desktop\PROJECTS PLAYGROUND\BooksApi\BooksApi\bin\Debug\net5.0\BookApiCore.pdb

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApi", "BooksApi\BooksApi.csproj", "{B714D34C-9D33-4804-829E-912A1A73819D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApi", "BooksApi\BooksApi.csproj", "{B714D34C-9D33-4804-829E-912A1A73819D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApiModels", "BookApiModels\BookApiModels.csproj", "{1F6CEE56-FACE-412F-9981-3E266B622557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApiModels", "BookApiModels\BookApiModels.csproj", "{1F6CEE56-FACE-412F-9981-3E266B622557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApiData", "BooksApiData\BooksApiData.csproj", "{8DA4FA34-1442-4F75-A071-D031E7851859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApiData", "BooksApiData\BooksApiData.csproj", "{8DA4FA34-1442-4F75-A071-D031E7851859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApiDtos", "BooksApiDtos\BooksApiDtos.csproj", "{DF9D5287-01DC-4CE0-B70F-BC8E082E49C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksApiDtos", "BooksApiDtos\BooksApiDtos.csproj", "{DF9D5287-01DC-4CE0-B70F-BC8E082E49C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApiCore", "BookApiCore\BookApiCore.csproj", "{8D7414E1-5D30-41B3-B87E-8C4908EFCD74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DF9D5287-01DC-4CE0-B70F-BC8E082E49C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF9D5287-01DC-4CE0-B70F-BC8E082E49C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF9D5287-01DC-4CE0-B70F-BC8E082E49C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7414E1-5D30-41B3-B87E-8C4908EFCD74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7414E1-5D30-41B3-B87E-8C4908EFCD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7414E1-5D30-41B3-B87E-8C4908EFCD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7414E1-5D30-41B3-B87E-8C4908EFCD74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
